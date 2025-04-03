@@ -25,11 +25,13 @@
             $('#button2').click(function(ev){
                 if(d2State)
             {
-                $('#d2').hide();
+                //without slow also possible
+                $('#d2').hide('slow');
             }
             else
             {
-                $('#d2').show();
+                //without passing fast also possible
+                $('#d2').show('fast');
             }
             d2State=!d2State;
             });
