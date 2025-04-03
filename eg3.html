@@ -1,0 +1,93 @@
+<!-- Lect Jquery 85 important ascpect related to this example 5:00 -->
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<style>
+.cool{
+color:magenta;
+}
+.hot
+{
+color:red;
+}
+.superCool
+{
+font-size:40pt;
+}
+.superSmallCool
+{
+font-size:12pt;
+}
+</style>
+<script src='jquery/jquery.js'></script>
+<script>
+$(()=>{
+$("#someSection > div").addClass("cool");
+
+$("#someSection div:not('.cool')").addClass("hot");
+$("#someSection div.cool").addClass("superCool");
+$("#someSection div.hot").addClass("superSmallCool");
+$("input[type]").css("color","blue");
+$("input[tmtm]").css("color","red");
+$("input[tmtm=ok]").css("font-size","24pt");
+//about this lec 85 around 15;00 - 16:00
+//by ^ using this im saying every string strarting from good
+$("input[tmtm^=good]").css("font-size","25pt");
+//$("input[tmtm^=good boy]").css("font-size","25pt");
+// for $ its for string ending with 'this' in our case it's dog
+$("input[tmtm$=dog]").css("font-size","5pt");
+
+//0 based indexing lect 85 around 20:00-21:35
+$("li:even").css("color","green");
+$("li:odd").css("color","magenta");
+$("li:eq(1)").css("color","yellow");
+//this all are 0th based
+
+//this is 1th based
+$("li:nth-child(3)").css("color","blue");
+
+});
+</script>
+</head>
+<body>
+<div id='someSection'>
+<div>
+What is this?
+<div>
+This is that
+</div>
+</div>
+
+<div>
+How long you've been here?
+<div>
+For an enternity.
+</div>
+</div>
+
+</div>
+
+<!-- lec 85 around 11:30 -->
+<input type='text' tmtm='ok' ><br>
+<input type='text'><br>
+<input type='text' tmtm='ok'><br>
+<input type='text'><br>
+<input type='text' tmtm='good'><br>
+<input type='text' tmtm='good boy'><br>
+<input type='text' tmtm='good dog'><br>
+
+<ul>
+<li>Ujjain</li>
+<li>Indore</li>
+<li>Dewas</li>
+<li>Nagda</li>
+<li>Mumbai</li>
+<li>Thane</li>
+<li>Goa</li>
+<li>Ratlam</li>
+</ul>
+
+</body>
+</html>
