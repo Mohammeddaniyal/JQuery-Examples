@@ -22,8 +22,16 @@
             alert($("#d1.something").css("font-family"));
             $("#d1.something").css("font-family","Verdana");
         });
-            $('#button2').click(function(){
-
+            $('#button2').click(function(ev){
+                if(d2State)
+            {
+                $('#d2').hide();
+            }
+            else
+            {
+                $('#d2').show();
+            }
+            d2State=!d2State;
             });
         });
     </script>
