@@ -10,9 +10,9 @@
            $(document).keydown(function(ev){
             $('#board').append(ev.which+","+ev.key+","+ev.code+"<br>");
             if(ev.ctrlKey) $('#board').append("CTRL key<br>");
-            if(ev.ctrlKey) $('#board').append("CTRL key<br>");
-            if(ev.ctrlKey) $('#board').append("CTRL key<br>");
-            if(ev.ctrlKey) $('#board').append("CTRL key<br>");
+            if(ev.altKey) $('#board').append("CTRL key<br>");
+            if(ev.shiftKey) $('#board').append("CTRL key<br>");
+            if(ev.metaKey) $('#board').append("CTRL key<br>");
             }); 
         });
     </script>
