@@ -1,0 +1,157 @@
+<!-- lecture 86 -->
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<script src='jquery/jquery.js'></script>
+<script>
+//issue is that jquery contains $ but what now we have declared a function named $
+//so now this $ will be called not the jquery one
+//#SOLUTION : jquery devlepores provided this (instead of $ use jQuery.noConflicts())
+function $(k)
+{
+alert('just do it '+k);
+}
+function doSomething()
+{
+//$('#button1').css('color','blue');
+//solution
+jQuery("#button1").css('color','blue');
+}
+jQuery.noConflict();
+jQuery(($)=>{
+$('#button2').on('click',function(){
+alert('I am button2');
+});
+
+$('#button3').on('click',function(){
+//here this pointer refers to button3 object reference
+$(this).css('color','red');
+});
+
+$('#button4').on('click',function(){
+$(this).css('font-size','24pt');
+});
+
+
+//here we're not calling click method but we're defining that 
+//what will happen when the button is clicked
+$('#button5').click(function(){
+$('#abcd').toggleClass('xyz');
+});
+
+//lec 86 18:00
+/*
+$('#mainContainer').click(function(){
+alert('main container clicked');
+});
+*/
+
+//lec 86 19:00
+$('#mainContainer').click(function(event){
+if(event.target==this)
+alert('main container clicked');
+});
+
+//lec 86 propogation part 25:00
+// simple if i click on child the event for parent will also call
+$('#mainContainer2').click(function(ev){
+alert('main container 2 clicked');
+});
+
+$('#childContainer2').click(function(ev){
+alert('child container 2 clicked');
+ev.stopPropagation();
+});
+
+$('#mmm').click(function(ev){
+alert('mmm span clicked');
+});
+$('#button7').click(function(ev){
+alert('button 7 got clicked');
+ev.stopPropagation();
+});
+
+$('#button8').click(function(ev){
+alert('Form is being submitted with value '+$('#nm').val());
+if($('#nm').val()==0)
+{
+ev.preventDefault();
+}
+});
+
+$('#d1').click(function(ev){
+if($(ev.target).is('#d1')) alert('d1 is clicked');
+if($(ev.target).is('#d2')) alert('d2 clicked');
+if($(ev.target).is('#s1')) alert('s1 clicked');
+});
+
+$('#button9').click(function(ev){
+alert('button 9 clicked');
+$('#button10').trigger("click");
+$(this).off('click');
+});
+$('#button10').click(function(ev){
+alert('Button 10 clicked');
+});
+});
+</script>
+<style>
+.xyz
+{
+font-size:20pt;
+color: brown;
+font-weight:bold;
+}
+</style>
+</head>
+<body>
+<button id='button1' type='button' onclick='doSomething()'>(1) Click me</button><br>
+<button id='button2' type='button'>(2) Click me</button><br>
+<button id='button3' type='button'>(3) Click me</button><br>
+<button id='button4' type='button'>(4) Click me</button><br>
+<button id='button5' type='button'>(5) Click me</button><br>
+
+<div id='abcd' class='xyz'>
+Allah is the greatest.
+</div>
+
+<div id='mainContainer'>
+Some matter in main container<br>
+<div id='childContainer'>
+Some matter in child container<br>
+<span id='lmn'>
+<button id='button6' type='button'>(6) Click me</button>
+</span>
+</div>
+</div>
+
+<div id='mainContainer2'>
+Some matter in main container2<br>
+<div id='childContainer2'>
+Some matter in child container2<br>
+<span id='mmm'>
+cool stuff<br>
+<button id='button7' type='button'>(7) Click me</button>
+</span>
+</div>
+</div>
+
+<form action='whatever'>
+Enter something<input type='text' id='nm'><br>
+<button id='button8' type='submit'>Submit</button>
+</form>
+
+<div id='d1'>
+Good <br>
+<div id='d2'>
+Bad <br>
+<span id='s1'>Ugly</span>
+</div>
+</div>
+<button id='button9' type='button'>(9) Click me</button>
+<button id='button10' type='button'>(10) Click me</button>
+
+</body>
+</html>
