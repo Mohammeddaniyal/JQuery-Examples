@@ -13,7 +13,16 @@
         }
     </style>
     <script>
-        
+        var d2State=1;
+        $(()=>{
+            $('#button1').click(function(ev)
+        {
+            alert($("#d1.something").css("font-size"));
+            alert($("#d1.something").css("color"));
+            alert($("#d1.something").css("font-family"));
+            $("#d1.something").css("font-family","Verdana");
+        });
+        });
     </script>
 </head>
 
