@@ -9,7 +9,11 @@
         $(()=>{
            $(document).keydown(function(ev){
             $('#board').append(ev.which+","+ev.key+","+ev.code+"<br>");
-           }); 
+            if(ev.ctrlKey) $('#board').append("CTRL key<br>");
+            if(ev.ctrlKey) $('#board').append("CTRL key<br>");
+            if(ev.ctrlKey) $('#board').append("CTRL key<br>");
+            if(ev.ctrlKey) $('#board').append("CTRL key<br>");
+            }); 
         });
     </script>
 </head>
