@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<script src='jquery/jquery.js'></script>
+</head>
+<style>
+.cool{
+color:green;
+}
+</style>
+<script>
+/* First technique
+function doSomething()
+{
+$(".cool").css("font-size","24pt");
+$("span").css("border","3px solid red");
+$("#abc").css("background","yellow");
+}
+$(doSomething);
+*/
+//Second technique
+$(()=>{
+$(".cool").css("font-size","24pt");
+$("span").css("border","2px solid magenta");
+$("#abc").css("background","red");
+});
+</script>
+<body>
+<span >Allah</span><br>
+<span class='cool'>is</span><br>
+<span id='abc'>the</span><br>
+<span class='cool'>Greatest.</span><br>
+</body>
+</html>
