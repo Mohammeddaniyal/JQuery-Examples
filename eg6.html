@@ -6,7 +6,11 @@
     <title>JQuery Examples</title>
     <script src='jquery/jquery.js'></script>
     <script>
-
+        $(()=>{
+           $(document).keydown(function(ev){
+            $('#board').append(ev.which+","+ev.key+","+ev.code+"<br>");
+           }); 
+        });
     </script>
 </head>
 
