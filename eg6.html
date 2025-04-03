@@ -10,9 +10,10 @@
            $(document).keydown(function(ev){
             $('#board').append(ev.which+","+ev.key+","+ev.code+"<br>");
             if(ev.ctrlKey) $('#board').append("CTRL key<br>");
-            if(ev.altKey) $('#board').append("CTRL key<br>");
-            if(ev.shiftKey) $('#board').append("CTRL key<br>");
-            if(ev.metaKey) $('#board').append("CTRL key<br>");
+            if(ev.altKey) $('#board').append("ALT key<br>");
+            if(ev.shiftKey) $('#board').append("SHIFT key<br>");
+            if(ev.metaKey) $('#board').append("META key<br>");
+            ev.preventDefault(); //used to demap the mapped keys such as f1 and others..
             }); 
         });
     </script>
