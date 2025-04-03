@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<style>
+.tbl{
+border: 1px solid black;
+border-collapse: collapse;
+}
+</style>
+<script src='jquery/jquery.js'></script>
+<script>
+$(()=>{
+$("table").addClass("tbl");
+$("table th").addClass("tbl");
+$("table td").addClass("tbl");
+$("table thead").css("background","gray");
+$("table thead").css("color","white");
+$("table thead").css("border","1px solid black");
+$("table th:nth-child(2)").css("border-right","1px solid white");
+$("table th:nth-child(1)").css("border-right","1px solid white");
+$("table tbody tr").filter(":even").css("background","lightgray");
+$("table tbody td:contains('Ujjain')").css("color","#00FFFF");
+$("table tbody td:contains('Akhi')").next().css("color","red");
+$("table tbody td:contains('6.')").nextAll().css("color","green");
+$("table tbody td:contains('3.')").nextAll().addBack().css("color","magenta");
+//means parent, this style will affect on it's tr tag becuase its his parent
+$("table tbody td:contains('Sarah')").parent().css("font-weight","bold");
+$("table tbody td:contains('Goa')").children().css("font-size","20pt");
+
+});
+</script>
+</head>
+<body>
+<table>
+<thead>
+<th>S.No</th>
+<th>Name</th>
+<th>City</th>
+</thead>
+<tbody>
+<tr>
+<td>1.</td> <td>Sam</td> <td>Ujjain</td>
+</tr>
+<tr>
+<td>2.</td> <td>Hashim</td> <td>Indore</td>
+</tr>
+<tr>
+<td>3.</td> <td>Harun</td> <td>Ujjain</td>
+</tr>
+<tr>
+<td>4.</td> <td>Sameer</td> <td>Dewas</td>
+</tr>
+<tr>
+<td>5.</td> <td>Akhi</td> <td>Mumbai</td>
+</tr>
+<tr>
+<td>6.</td> <td>Tom</td> <td>Goa<span>(Beach)</Span></td>
+</tr>
+<tr>
+<td>7.</td> <td>Sarah</td> <td>Ratlam</td>
+</tr>
+
+</tbody>
+
+</table>
+</body>
+</html>
