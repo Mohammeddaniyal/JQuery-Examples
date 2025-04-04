@@ -19,7 +19,16 @@
 $(()=>{
 $('#d1 p').eq(1).hide();
 $('#d1ReadMore').click(function(){
-    $('#d1 p').eq(1).toggle();
+    $('#d1 p').eq(1).toggle("show",function(){
+        if($('#d1 p').eq(1).is(":hidden"))
+    {
+        $('#d1ReadMore').text('Read more....')
+    }
+    else
+    {
+        $('#d1ReadMore').text('Read less....');
+    }
+});
 });
 });
 </script>
