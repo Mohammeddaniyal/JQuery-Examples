@@ -9,7 +9,7 @@
 </head>
 <style>
     .xyz{
-        margin-top:200px;
+        margin-top:100px;
         margin-left:100px;
     }
 </style>
@@ -18,8 +18,15 @@
         $('#button1').click(function(){
        //down to top && right to left in sync
             //     $('#d1').animate({"margin-top":"0px","margin-left":"0px"},"slow");
-        //now async case
+        //now async case (chaining)
        // $('#d1').animate({"margin-top":"0px"},"slow").animate({"margin-left":"0px"},"fast")    
+       //im this both we'll go to 0 px in sync (TOGETHER)
+       //$('#d1').animate({"margin-top":"0px"},"slow").animate({"margin-left":"0px"},{"duration":"fast","queue":false})    
+       
+       // Very important concept related to "queue" function
+       //lecture 88 25:33
+
+       $('#d1').animate({"margin-top":"0px"},"slow").animate({"margin-left":"0px"},{"duration":"fast","queue":true})                                                                                  
         
     })
     });
