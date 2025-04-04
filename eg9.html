@@ -13,6 +13,13 @@
         margin-left:100px;
     }
 </style>
+<script>
+    $(()=>{
+        $('#button1').click(function(){
+            $('#d1').animate({"margin-top":"0px"});
+        })
+    });
+</script>
 <body>
     <div id='d1' class='xyz'>
         Something Something Something Something Something<br>
@@ -22,6 +29,7 @@
         Something Something Something Something Something<br>
         Something Something Something Something Something<br>
     </div>
+<button id='button1' type="button">(1) Click me</button>
 </body>
 
 </html>
