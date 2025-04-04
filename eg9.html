@@ -25,8 +25,10 @@
        
        // Very important concept related to "queue" function
        //lecture 88 25:33
-
-       $('#d1').animate({"margin-top":"0px"},"slow").animate({"margin-left":"0px"},{"duration":"fast","queue":true})                                                                                  
+            //more cleared explnation at 27:00 
+       $('#d1').animate({"margin-top":"0px"},"slow").animate({"margin-left":"0px"},{"duration":"fast","queue":true}).queue(function(ev){
+        ev();// by this the hide will be called only using this otherwise it will not be called
+       }).hide(5000);
         
     })
     });
