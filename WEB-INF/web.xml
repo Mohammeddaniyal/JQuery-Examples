@@ -63,5 +63,12 @@
 <url-pattern>/servletFour</url-pattern>
 </servlet-mapping>
 
-
+<servlet>
+<servlet-name>ServletFive</servlet-name>
+<servlet-class>com.thinking.machines.hr.servlets.ServletFive</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ServletFive</servlet-name>
+<url-pattern>/servletFive</url-pattern>
+</servlet-mapping>
 </web-app>
