@@ -6,8 +6,18 @@
     <title>JQuery Examples</title>
     <script src='jquery/jquery.js'></script>
 </head>
-
+<script>
+    $(()=>{
+        var r=$('#xy');
+        alert('hi');
+        var k=r.attr("id");
+        alert(k);
+    });
+</script>
 <body>
+    <div id='xy'>
+        Hello
+    </div>
 </body>
 
 </html>
