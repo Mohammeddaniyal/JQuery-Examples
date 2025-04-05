@@ -23,38 +23,6 @@ designationCombo.append(obj);
 }
 });
 });
-/*
-function populateDesignations()
-{
-var xmlHttpRequest=new XMLHttpRequest();
-xmlHttpRequest.onreadystatechange=function(){
-if(this.readyState==4)
-{
-if(this.status==200)
-{
-var designations=JSON.parse(this.responseText);
-var designationCombo=document.getElementById("designationCode");
-var obj;
-for(var i=0;i<designations.length;i++)
-{
-obj=document.createElement("option");
-obj.value=designations[i].code;
-obj.text=designations[i].title;
-designationCombo.appendChild(obj);
-}
-
-}
-else 
-{
-alert('some problem');
-}
-}
-};
-xmlHttpRequest.open('GET','servletOne',true);
-xmlHttpRequest.send();
-}
-window.addEventListener('load',populateDesignations);
-*/
 </script>
 </head>
 <body>
@@ -63,6 +31,6 @@ window.addEventListener('load',populateDesignations);
 </select>
 <br>
 <div></div>
-<a href='/something/index.html'>Home</a>
+<a href='/jq/index.html'>Home</a>
 </body>
 </html>
