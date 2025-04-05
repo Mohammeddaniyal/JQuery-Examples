@@ -9,8 +9,10 @@
 <script>
     $(()=>{
        $("<p>Hello</p>").insertAfter("#d1");
-       $("<div>Nice to see you here</div>").insertBefore('#p2');
+       $("<div>Nice to see you here</div>").insertBefore($('#p2'));
        $('h2').insertAfter('#d2 ');
+       $("<p>Hello everyone konichiwa, im in d2</p>").appendTo("#d2");
+       $("<h3>Anime is not trashy</h3>").prependTo('#d2');
        });
 </script>
 <body>
