@@ -12,12 +12,20 @@
         alert('hi');
         var k=r.attr("id");
         alert(k);
+        alert($('#myInput').attr('type'));
+        alert($('#myInput').attr('value'));
+        alert($('#myInput').attr('id'));
+        alert($('#myInput').prop('type'));
+        alert($('#myInput').prop('id'));
+        alert($('#myInput').prop('value'));
+        
     });
 </script>
 <body>
     <div id='xy'>
         Hello
     </div>
+    <input id='myInput' type="text" value="Hello" checked="checked">
 </body>
 
 </html>
