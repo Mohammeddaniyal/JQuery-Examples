@@ -36,6 +36,7 @@
 <url-pattern>/servletOne</url-pattern>
 </servlet-mapping>
 
+<servlet>
 <servlet-name>ServletTwo</servlet-name>
 <servlet-class>com.thinking.machines.hr.servlets.ServletTwo</servlet-class>
 </servlet>

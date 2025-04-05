@@ -1,0 +1,68 @@
+<!DOCTYPE HTML
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>AJAX Examples</title>
+<script src="jquery/jquery.js"></script>
+<script>
+$(()=>{
+$.get('servletOne',function(data)
+{
+alert('done');
+$("div").html(data);
+var designations=JSON.parse(data);;
+var designationCombo=$('#designationCode');
+alert(designationCombo);
+var obj;
+for(var i=0;i<designations.length;i++)
+{
+obj=document.createElement("option");
+obj.value=designations[i].code;
+obj.text=designations[i].title;
+designationCombo.append(obj);
+}
+});
+});
+/*
+function populateDesignations()
+{
+var xmlHttpRequest=new XMLHttpRequest();
+xmlHttpRequest.onreadystatechange=function(){
+if(this.readyState==4)
+{
+if(this.status==200)
+{
+var designations=JSON.parse(this.responseText);
+var designationCombo=document.getElementById("designationCode");
+var obj;
+for(var i=0;i<designations.length;i++)
+{
+obj=document.createElement("option");
+obj.value=designations[i].code;
+obj.text=designations[i].title;
+designationCombo.appendChild(obj);
+}
+
+}
+else 
+{
+alert('some problem');
+}
+}
+};
+xmlHttpRequest.open('GET','servletOne',true);
+xmlHttpRequest.send();
+}
+window.addEventListener('load',populateDesignations);
+*/
+</script>
+</head>
+<body>
+<h1>Get Type request example</h1>
+<select id='designationCode'>
+</select>
+<br>
+<div></div>
+<a href='/something/index.html'>Home</a>
+</body>
+</html>
