@@ -26,5 +26,16 @@
       JQuery Examples
     </description>
     <display-name>JQuery Examples</display-name>
+<servlet>
+
+<servlet-name>ServletOne</servlet-name>
+<servlet-class>com.thinking.machines.hr.servlets.ServletOne</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ServletOne</servlet-name>
+<url-pattern>/servletOne</url-pattern>
+</servlet-mapping>
+
+
 
 </web-app>
