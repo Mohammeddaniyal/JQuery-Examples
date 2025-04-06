@@ -1,0 +1,38 @@
+<!--Form Serialize-->
+<!DOCTYPE HTML>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>JQuery Examples</title>
+    <script src='jquery/jquery.js'></script>
+</head>
+    <script src='jquery/jquery.js'></script>
+    <script>
+        $(()=>{
+            $('#onSubmit').click(function(){
+                var str=$("form").serialize();
+                alert(str);
+            });
+        });
+    </script>
+<body>
+    <form action='/whatever'>
+        Name 
+        <input type='text' id='nm' name="nm"><br>
+        City
+        <select id="'city" name='city'>
+            <option>Ujjain</option>
+            <option>Nagda</option>
+            <option>Indore</option>
+        </select>    <br>
+        Gender &nbsp;
+        <input type="radio" name='radio' value="M" checked="checked">Male
+        <input type="radio" name='radio' value="F">Female<br>
+        Is Indian &nbsp;
+        <input type="checkbox" name='isIndian' id="isIndian">
+    </form>
+    <button id='onSubmit' type="button">Submit</button>
+</body>
+
+</html>
