@@ -22,8 +22,14 @@
         background:yellow;
         margin:4px;
     }
+    .new
+    {
+        color:brown;
+        font-size:24pt;
+    }
 </style>
 <script>
+    var p;
     $(()=>{
         $('#button1').click(function(){
             $('#hello').clone().appendTo('#goodbye');
@@ -34,6 +40,27 @@
         $('#button3').click(function(){
             $('div').wrapAll("<p class='parent'>BIG PARENT</p>");
         });
+        $('#button4').click(function(){
+            $('#goodbye').wrapInner("<div class='new'></div>");
+        });
+        $('#button5').click(function(){
+            $("<b>REPLACED IN PLACE FOR PARAGRAPH</b><br>").replaceAll("p");
+        });
+        $('#button6').click(function(){
+            $("#hello").replaceWith("<h2>HELLO</h2>");
+        });
+        $('#button7').click(function(){
+            $("#hello").remove();
+        });
+        $('#button8').click(function(){
+            if(p)
+        {
+            p.insertAfter('#Container');
+            p=null;
+        }else{
+            p=$('p').detach();
+        }
+        });
     });
 </script>
 <body>
@@ -42,10 +69,18 @@
         <div id="hello">Hello</div>
         <div id="goodbye">goodbye</div>
     </div>
+    <p>Hello</p>
+    <p>How are you</p>
+    <p>Nice to see you</p>
     <button id="button1">(1) Click me for clone</button>
     <button id="button2">(2) Click me for wrap</button>
     <button id="button3">(3) Click me for wrapAll</button>
-    button id="button3">(3) Click me for wrapAll</button>
+    <button id="button4">(4) Click me for wrapInner</button>
+    <button id="button5">(5) Click me for replaceAll</button>
+    <button id="button6">(6) Click me for replaceWith</button>
+    <button id="button7">(6) Click me for remove</button>
+    <button id="button8">(6) Attach/DeAttach paragraphs</button>
+    
 </body>
 
 </html>
