@@ -6,6 +6,15 @@
     <meta charset='utf-8'>
     <title>JQuery Examples</title>
     <script src='jquery/jquery.js'></script>
+    <script>
+        $(()=>{
+            $('#button1').click(function(){
+                $("<div></div>").css('border','2px solid black').load('eg1.html',function(){
+                    alert('eg1 loaded');
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
