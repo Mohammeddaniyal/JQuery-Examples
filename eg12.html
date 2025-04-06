@@ -8,13 +8,22 @@
     <script src='jquery/jquery.js'></script>
 </head>
 <script src='jquery/jquery.js'></script>
+<style>
+    #hello{
+        border: 2px solid blue;
+    }
+    .p1
+    {
+        border:3px solid red;
+    }
+</style>
 <script>
     $(()=>{
         $('#button1').click(function(){
             $('#hello').clone().appendTo('#goodbye');
         });
         $('#button2').click(function(){
-            $('#hello').wrap("<span style='color:red'>PARENT</span>");
+            $('#hello').wrap("<p class='p1'>PARENT</p>");
         });
     });
 </script>
