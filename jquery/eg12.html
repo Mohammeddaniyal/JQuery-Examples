@@ -1,0 +1,27 @@
+<!-- This example contians example for clone,wrap,wrapAll,wrapInnger,replaceAll,replaceWith,remove,detach-->
+<!DOCTYPE HTML>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>JQuery Examples</title>
+    <script src='jquery/jquery.js'></script>
+</head>
+<script src='jquery/jquery.js'></script>
+<script>
+    $(()=>{
+        $('#button1').click(function(){
+            $('#hello').clone().appendTo('#goodbye');
+        });
+    });
+</script>
+<body>
+    <div id='Container'>
+        Greetings Everyone
+        <div id="hello">Hello</div>
+        <div id="goodbye">goodbye</div>
+    </div>
+    <button id="button1">(1) Click me for clone</button>
+</body>
+
+</html>

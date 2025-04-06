@@ -1,0 +1,40 @@
+<!--GET With DATA-->
+<!DOCTYPE HTML <html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>AJAX Examples</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(()=>
+        {
+            $('#getButton').click(function(){
+                $('#title').html('');
+                $.ajax({
+                    url: "servletTwo",
+                    data: {"code" : $('#code').val()},
+                    success:function(data)
+                    {
+                        if(data.title)$('#title').html(data.title).css('color','black').css('font-weight','bold');
+                        else $('#title').html('NOT FOUND').css('color',"red").css('font-weight','bold');
+                        },
+                    failure: function()
+                    {
+                        alert('failed');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Get Type request with data example</h1>
+    Enter Code<input type='text' id='code'>
+    <button type='button' id='getButton'>Get Designation</button>
+    <br>
+    Title&nbsp;<span id='title'></span><br>
+    <a href='/jq/index.html'>Home</a>
+</body>
+
+</html>
