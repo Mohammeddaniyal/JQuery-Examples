@@ -13,6 +13,9 @@
         $('#button1').click(function(){
             $('#hello').clone().appendTo('#goodbye');
         });
+        $('#button2').click(function(){
+            $('#hello').wrap("<span style='color:red'>PARENT</span>");
+        });
     });
 </script>
 <body>
@@ -22,6 +25,7 @@
         <div id="goodbye">goodbye</div>
     </div>
     <button id="button1">(1) Click me for clone</button>
+    <button id="button2">(2) Click me for wrap</button>
 </body>
 
 </html>
