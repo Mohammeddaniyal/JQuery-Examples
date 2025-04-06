@@ -16,6 +16,12 @@
     {
         border:3px solid red;
     }
+    .parent
+    {
+        border:3px solid magenta;
+        background:yellow;
+        margin:4px;
+    }
 </style>
 <script>
     $(()=>{
@@ -24,6 +30,9 @@
         });
         $('#button2').click(function(){
             $('#hello').wrap("<p class='p1'>PARENT</p>");
+        });
+        $('#button3').click(function(){
+            $('div').wrapAll("<p class='parent'>BIG PARENT</p>");
         });
     });
 </script>
@@ -35,7 +44,8 @@
     </div>
     <button id="button1">(1) Click me for clone</button>
     <button id="button2">(2) Click me for wrap</button>
-    <button id="button2">(3) Click me for wrapAll</button>
+    <button id="button3">(3) Click me for wrapAll</button>
+    button id="button3">(3) Click me for wrapAll</button>
 </body>
 
 </html>
