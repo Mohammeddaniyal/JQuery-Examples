@@ -1,0 +1,28 @@
+<!--this example demostrates ajaxStart-->
+<!DOCTYPE HTML>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>JQuery Examples</title>
+    <script src='jquery/jquery.js'></script>
+    <script>
+        $(()=>{
+            $(document).on('ajaxStart',function()
+        {
+            alert('trigerred');
+            $('#log').text("Triggered ajaxStart handler");
+        })
+        $('#trigger').click(function(){
+            $('#result').load('eg3.html').css('border','1px solid black');
+        });
+        });
+    </script>
+</head>
+
+<body>
+<div id="trigger">Trigger</div>
+<div id="result"></div>
+<div id="log"></div>
+</body>
+</html>
