@@ -1,0 +1,33 @@
+<!--This example demonstrates promise of javascript lec 91-->
+<!DOCTYPE HTML>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>JQuery Examples</title>
+    <script src='jquery/jquery.js'></script>
+<script>
+    function coolDown(number,fn)
+    {
+        //suppose this is happening on the server side asynchronously
+        setTimeout(function(){
+            number/=number;
+            fn(number);
+        },3000);
+    }
+    $(()=>{
+        $('#button1').click(function(){
+            var x=100;
+            coolDown(x,function(y){
+                alert(y+" is the cooled down version of "+x);
+            });
+            });
+    });
+</script>
+</head>
+
+<body>
+    <button id='button1'type='button'>Click me</button>
+</body>
+
+</html>
