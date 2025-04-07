@@ -9,9 +9,11 @@
 <script>
     function coolDown(number)
     {
+        //suppose this is happening on the server side asynchronously
         setTimeout(function(){
             number/=number;
         },3000);
+        //Problem statement lec 91 6:13
         return number;
     }
     $(()=>{
