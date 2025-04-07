@@ -7,22 +7,32 @@
     <title>JQuery Examples</title>
     <script src='jquery/jquery.js'></script>
 <script>
-    function coolDown(number,fn)
+    function coolDown(number)
     {
-        //suppose this is happening on the server side asynchronously
-        setTimeout(function(){
+        var prm=new Promise(function(done,problem){
+            //suppose this work is happening on server side
+            setTimeout(function(){
+                if(number==0)
+            {
+                problem(number+" cannot be cooled as it is in it's coolest form");
+                return;
+            }
             number/=2;
-            fn(number);
-        },3000);
+            done(number);
+            },3000);
+        });
+        return prm;
     }
     $(()=>{
         $('#button1').click(function(){
             var x=100;
-            coolDown(x,function(y){
-                alert(y+" is the cooled down version of "+x);
-            });
-            });
-    });
+            var p=coolDown(x);
+            p.then(function (result){
+                alert('Cooled down version of '+x+" is "+result);
+            },function(error){
+                alert(error);
+            })    
+        });
 </script>
 </head>
 
