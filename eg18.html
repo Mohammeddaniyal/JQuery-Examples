@@ -7,15 +7,18 @@
     <title>JQuery Examples</title>
     <script src='jquery/jquery.js'></script>
 <script>
-    function doSomething()
+    function coolDown(number)
     {
         setTimeout(function(){
-            alert('done');
+            number/=number;
         },3000);
+        return number;
     }
     $(()=>{
         $('#button1').click(function(){
-            doSomething();
+            var x=100;
+            var y=coolDown(x);
+            alert(y+" is the cooled down version of "+x);
         });
     });
 </script>
